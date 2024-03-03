@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Note Styles */
+.note {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #454545;
+    color: white;
+    width: 80%; /* Adjust the width as needed */
+	max-width: 400px; /* Set a maximum width if desired */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 50px;
+    animation: slide 3s ease-out forwards;
+}
+
+
+
+@keyframes slide {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+
+/* Small font */
+.note p {
+    font-size: 14.5px;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+name {
+	  position: relative;
+  width: 100%; /* or whatever width you desire */
+  height: 100vh; /* or whatever height you desire */
+}
+
+.right-top-text {
+  position: absolute;
+  top: 105px;
+  right: 10px;
+  font-size: 12px;
+  
+}
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.button-3 {
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+	font-family: 'Shadows Into Light',cursive;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    color: var(--font-color-black);
+    background-color: var(--btn-bg-color-hover);
+	cursor: pointer;
+}
+
+.button-3 span {
+    position: relative;
+}
+
+.button-3::before {
+    content: '';
+    background: var(--btn-bg-color);
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.button-3:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+/* Media Queries for Responsive Design */
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+}
+
+/* Heart Styles */
+  .heart {
+   z-index : 999;
+   position : absolute;
+}
+.heart:before,
+.heart:after {
+   content : "";
+   background-color : #fc2a62;
+   position : absolute;
+   height : 30px;
+   width : 45px;
+   border-radius : 15px 0px 0px 15px;
+}
+.heart:before {
+   transform : rotate(45deg);
+}
+.heart:after {
+   left : 10.5px;
+   transform : rotate(135deg);
+}
+@keyframes heartfade {
+   0% {
+    opacity : 1;
+   }
+   50% {
+    opacity : 0;
+   }
+}
+.heart {
+   z-index : 999;
+   animation : heartfade 6s linear;
+   position : absolute;
+}
